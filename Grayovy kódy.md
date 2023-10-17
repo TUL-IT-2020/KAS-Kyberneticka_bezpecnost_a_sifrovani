@@ -13,6 +13,8 @@ Sousední čísla se liší právě v jednom bitu.
 | 6   | 101 |     |
 | 7   | 100 |     |
 
+![[gray_code.png]]
+
 Rekurzivní konstrukce GK délky n z GK délky n-1
 
 | GK n-1 | GK  |
@@ -37,3 +39,8 @@ Př: 6 -> 110
 6 = 110 -> 101
 2 = 010 -> 011
 
+
+## Použití
+- Rotační čidla 
+- přepínače
+- genetické algoritmy
