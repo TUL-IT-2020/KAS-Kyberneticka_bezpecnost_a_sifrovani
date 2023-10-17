@@ -65,23 +65,7 @@ Detekuje lichý počet chyb ve slově. Pouze detekuje, neopravuje.
 
 ## Volební kódy
 Každý bit vysíláme nx-krát.
-Příklad - kód (3,1)
-Ztrojení bitů. 
-Zpráva: 0110
-Vyšleme: 000 111 111 000
-Příjemce:
-
-| Data | Vyhodnocení | opravení | dekódováno | Validnost zprávy |
-| ---- | ----------- | -------- | ---------- | ---------------- |
-| 000  | OK          |          | 0          | OK               |
-| 110  | NOK         | 1        | 1          | OK               |
-| 010  | NOK         | 0        | 0          | NOK              |
-| 000  | OK          |          | 0          | OK               | 
-
-Jedničky přehlasovali nulu a zpráva byla opravena na $111$.
-
-Opravuje jednu chybu, nebo detekuje až dvojitou chybu!
-
+Příklad: ![[Kód(3,1)]]
 ## "Sloupcová parita"
 Ochrana před shluky chyb. Průměrná délka shluku 6bitů.
 
@@ -95,3 +79,6 @@ Ochrana před shluky chyb. Průměrná délka shluku 6bitů.
 | 101101 |       0         |
 
 Na posledním řádku je takzvaná sloupcová parita. 
+
+## Lineární kódy
+![[Lineární kódy]]
