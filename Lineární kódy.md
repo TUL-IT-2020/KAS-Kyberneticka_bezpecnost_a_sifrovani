@@ -13,6 +13,8 @@ Vše je modulo 2.
 1*1 = 1
 ```
 
+![[images_plus_krát.png]]
+
 Lineární množina M
 $a,b \in M$ 
 $a+b \in M$

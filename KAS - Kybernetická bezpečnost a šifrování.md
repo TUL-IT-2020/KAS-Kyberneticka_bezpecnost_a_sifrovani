@@ -5,7 +5,7 @@ Otto Severýn
 CO2OO7 - Budova C druhé patro
 
 ## Semestrální práce
-
+[[TUL-navazující_studium/1. semestr/KAS-Kyberneticka_bezpecnost_a_sifrovani/Semestrální práce]]
 
 ## Přednášky
 účast nepovinná
@@ -19,7 +19,7 @@ Vypracování a prezentace semestrální práce. Prezentace koncem semestru, 11-
 - [[Kryptografie_okolo_nas.pdf|Burda - Kryptografie okolo nás]]
 - [[bajecny_svet_elektronickeho_podpisu_cznic.pdf|Peterka - Báječný svět elektronického podpisu]]
 - [[Applied Cryptography.pdf|Bruce Schneier - Applied Cryptography]]
-- [[Neal-stephenson-cryptonomicon.pdf|Neal Stephenson - Cryptonomicon]] (beletrie)
+- [[Neal_stephenson-cryptonomicon.pdf|Neal Stephenson - Cryptonomicon]] (beletrie)
 
 ### Výklad
 
