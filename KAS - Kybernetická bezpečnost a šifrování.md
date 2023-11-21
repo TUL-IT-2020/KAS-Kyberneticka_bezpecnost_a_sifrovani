@@ -5,7 +5,7 @@ Otto Severýn
 CO2OO7 - Budova C druhé patro
 
 ## Semestrální práce
-[[TUL-navazující_studium/1. semestr/KAS-Kyberneticka_bezpecnost_a_sifrovani/Semestrální práce]]
+[[TUL-navazující_studium/1. semestr/KAS-Kyberneticka_bezpecnost_a_sifrovani/Semestrální práce|Semestrální práce]]
 
 ## Přednášky
 účast nepovinná
