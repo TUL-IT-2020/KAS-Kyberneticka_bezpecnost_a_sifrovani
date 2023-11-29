@@ -11,3 +11,6 @@ $k = 2^t -1 -t$
 - (255,2347)
 
 $d = 3$ ... jednu opravovat/dvě detekovat
+
+### Hammingův kód
+![[Hammingův kód]]

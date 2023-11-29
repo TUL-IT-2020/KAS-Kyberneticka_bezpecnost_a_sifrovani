@@ -2,17 +2,11 @@
 Autor: Jaroslav Körner
 # Kontrolní součty (MD5 a jiné) a jejich použití.
 
-- Co je to kontrolní součet
-- K čemu slouží
-	- podpis certifikátů
-- Jaké známe algoritmy
-	- MD5
-
 ## Kontrolní součty
 Kontrolní součet z anglického: **checksum = check + sum**, které vzniklo spojením dvou slov *kontrola* a *suma*. Kontrolní součty slouží pro detekci chyby v datech. Dle webového IT slovníku, pak definice tohoto pojmu zní:
 
 > **Checksum** (Kontrolní součet) - číslo, které slouží k kontrole integrity dat. Je vypočteno nějakým speciálním algoritmem. Kontrolní součet je přenášen společně s nějakou informací. Pokud vypočtený kontrolní součet nesouhlasí s tím přeneseným, nastala pravděpodobně při přenosu chyba.  
-> - IT slovník
+> - [IT slovník](https://it-slovnik.cz)
 ### Jak by ale takový kontrolní součet mohl vypadat? 
 Pro představu můžeme uvažovat velmi jednoduchý algoritmus, který bude na data aplikovat funkci $sum() \; mod(32)$ nad 32bitovými slovy. Když chceme odeslat zprávu po nespolehlivém kanálu, tak je potřeba ověřit na straně příjemce zda obdržel správná data. Odesilatel pak bude postupovat následovně:
 1) Rozdělí zprávu na $n * 32b$ úseků (poslední doplní nulami na příslušnou délku).
@@ -46,19 +40,18 @@ Hashovací funkce musí splňovat do určité míry několik vlastností:
 Dále také mývají tu vlastnosti že otisky dvou "podobných" souborů (například záměna jednoho písmene ve zprávě) si vůbec podobné nejsou.
 
 Příklad takové zprávy:
-Královna posílá zpráva:
+Královna posílá zpráva po vládním poslovi:
 1. "Jsem těhotná, asi s kočím z Mostu. Královna"
 2. "Jsem těhotná asi skočím z mostu. Královna"
 MD5 otisky:
 1. `3c723007c372b83ea3e28161f174dbdf`
 2. `04005f28f6f6bed78a8a316df66a07f7`
 
+Jak si můžete všimnout, stačí jen malá záměna zprávy vzniklá například tím že se královský posel přeslechne a král se dozví naprosto odlišnou informaci. Kdyby královna součástí zprávy poslovi předala i otisk MD5, nemohli by již dojít k záměně. 
+
 Při ověření souborů zaslaných po internetu neklademe zas takový důraz na to aby výpočet hashe byl časově náročný jako tomu je například u ukládání hesel.  
 
-
-SHA: Secure Hashing Algorithm
-
-Co je to Hash?
+### Co je to ten Hash?
 Jedná se o digitální otisk souboru, který se vygeneruje kryptografickou hashovací funkcí. Mezi příklady standardních hashovacích algoritmů patří:
 - MD5, 
 - SHA1, 
@@ -68,21 +61,21 @@ Jedná se o digitální otisk souboru, který se vygeneruje kryptografickou hash
 - SHA512, 
 - SHA224.
 
-Z nich jsou nejčastěji používány algoritmy SHA-1, SHA-256 a MD5, který však je dnes považován za "deprecated" tedy zastaralý a neměl by se používat pro .
+Z nich jsou nejčastěji používány algoritmy SHA-1, SHA-256 a MD5, který však je dnes považován za "deprecated" tedy zastaralý a neměl by se používat pro nic důležitého. SHA je anglická zkratka slovního spojení: Secure Hashing Algorithm, tedy bezpečný hashovací algoritmus.
 
-Princip spočívá v porovnání kontrolního součtu získaného souboru s původním kontrolním součtem tvůrce obsahu. Ukázka kontrolního součtu při použití kryptografické hashovací funkce SHA-256:
+Postup práce s těmito otisky pak spočívá v porovnání kontrolního součtu získaného otisknutím staženého souboru s původním kontrolním součtem od jeho tvůrce. Ukázka kontrolního součtu získaného při použití kryptografické hashovací funkce SHA-256 může vypadat následovně:
 
-79caae92ee6a3ef8f639b31b6b516100449502c07df722ce5a68c407129a0f6d
+`79caae92ee6a3ef8f639b31b6b516100449502c07df722ce5a68c407129a0f6d`
 
-Tato metodika slouží jako kontrolní mechanismus při předávání souborů k ověření zda nedošlo k poškození předávaných dat, zda nedošlo k infiltrování dat škodlivým fragmentem a nebo zda nedošlo k jakémukoliv zásahu do dat během procesu předávání třetí stranou.
-### MD5
+Tato metodika slouží jako kontrolní mechanismus při předávání souborů k ověření zda nedošlo k poškození předávaných dat, zda nedošlo k infiltrování dat škodlivým kódem a nebo zda nedošlo k jakémukoliv zásahu do dat během procesu předávání třetí stranou.
+### MD5 blíže
 MD5 je akronym pro Message-Digest algorithm 5. Jedná se o rozšířený šifrovací algoritmus. Ze vstupních dat vzniká výstup označovaný jako tzv. Hash nebo "otisk MD5". Počítače mají dnes dostatečný výkon na to, že MD5 nesplňuje požadavek na to aby, nebyl příliš rychlý na výpočet. 
 - duhové slovníky
 
-Hashování
-K čemu se dnes využívá
+## K čemu slouží hashování a kontrolní součty?
 
-Využití internetová komunikace
+Slouží zejména k ověření autenticity souborů při internetové komunikaci. Poskytují ochrana jak proti chybě přenosu způsobené nespolehlivým médiem (kontrolní součet), tak i proti úmyslné záměně souborů (otisk hashovací funkce). 
+Mezí další využití hashovacích funkcí patří ukládání hesel (kryptografické hashovací funkce), nebo například asociativní vyhledávání v datech. U vyhledávání klademe trochu jiné nároky na hashovací funkce. Například je výhodou, když data s podobnou vnitřní strukturou získají ve výsledku stejný nebo podobný hash, na čemž je pak postavené samotné vyhledávání či porovnávání souborů.
 ## Zdroje:
 - [[Rivest-MD5_rfc1321.pdf]]
 - [[Kontrolní součty a jejich výpočty v C.pdf]]

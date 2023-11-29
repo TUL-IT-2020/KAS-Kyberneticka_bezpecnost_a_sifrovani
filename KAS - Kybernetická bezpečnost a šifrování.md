@@ -7,12 +7,16 @@ CO2OO7 - Budova C druhé patro
 ## Semestrální práce
 [[TUL-navazující_studium/1. semestr/KAS-Kyberneticka_bezpecnost_a_sifrovani/Semestrální práce|Semestrální práce]]
 
-## Přednášky
-účast nepovinná
+Do 4.12. rozpis prezentujících. 
+Obhajoby 5. a 12.12. v čase cvičení E114. 10 minut na člověka 5 minut na prezentaci. 
 
 ### Zápočet
 Téma ve 4. týdnu.
 Vypracování a prezentace semestrální práce. Prezentace koncem semestru, 11-12 týden. 10 minut na prezentaci.
+
+## Přednášky
+účast nepovinná
+
 ### Literatura
 - Matoušek - Metody kódování, VUT 2006
 - NIC.CZ - Kolouch - [[cybersecurity.pdf|Cybersecurity]], [[cybercrime.pdf|Cybercrime]]
@@ -21,7 +25,7 @@ Vypracování a prezentace semestrální práce. Prezentace koncem semestru, 11-
 - [[Applied Cryptography.pdf|Bruce Schneier - Applied Cryptography]]
 - [[Neal_stephenson-cryptonomicon.pdf|Neal Stephenson - Cryptonomicon]] (beletrie)
 
-### Výklad
+## Výklad
 
 ``` mermaid
 sequenceDiagram
@@ -44,9 +48,9 @@ Postup přípravy na odeslání zprávy
 2) Zašifrovat
 3) Zabezpečit
 
-#### Kódování 
+### Kódování 
 Výklad významu jedniček a nul.
-##### Kódování jednoho znaku:
+#### Kódování jednoho znaku:
 Zobrazení $K : A \to B^*$
 - $A$ - zdrojová abeceda, př: $A = \{a,b,...,z\}$ 
 - $B$ - kódová abeceda, př: $B = \{0,1\}$
@@ -54,7 +58,7 @@ Zobrazení $K : A \to B^*$
 Kódová slova: Prvky z $B^*$, kterým je přiřazeno nějaké $a \in A$.
 $b = K(a)$
 
-##### Kódování zprávy:
+#### Kódování zprávy:
 Zpráva: $M = a_1, a_2, a_3, ..., a_n \; a \in A$
 Zakódovaná zpráva: $K(M) = K(a_1), K(a_2), K(a_3), ..., K(a_n)$
 
@@ -80,7 +84,7 @@ $K_3,K_4,K_5$ - jsou instantní kódy (okamžité), lze je dekódovat jak postup
 ![[Instantní kódy]]
 #### Bezztrátová komprese dat
 ![[Bezztrátová komprese dat]]
+### Šifrování
+![[Úvod do šifrování]]
 ## Cvičení
-
-### Zápočet
 

@@ -72,3 +72,11 @@ proudové vs blokové
 
 1. Zpráva je rozdělená na bloky.
 2. Na ně je aplikována substituce a transpozice
+
+### AES - Advanced Encryption System
+![[AES - Advanced Encryption System]]
+
+## Asymetrické systémy
+![[Asymetrické systémy]]
+## Hybridní kryptosystém
+![[Hybridní kryptosystém]]
