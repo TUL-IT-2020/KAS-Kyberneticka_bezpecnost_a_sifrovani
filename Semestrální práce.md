@@ -18,18 +18,48 @@ Příjemce postupně jednotlivá slova k sobě sčítá obdobně jako odesilatel
 
 Takovýto algoritmus je velice triviální a praxi se nepoužívá. Vrátil by nám naprosto stejný výsledek například když by jsme proházeli jednotlivá slova zprávy, ta tak nabyde naprosto jiného významu a její kontrolní součet bude naprosto shodný.
 
-### CRC - Cyclic Redundancy Check 
+### Příklady typů kontrolních součtů:
+#### CRC - Cyclic Redundancy Check 
+Principem bývá zbytek po dělení polynomů na konečném tělese. V počítači jde o implementaci pomocí XOR nad binárními čísly, díky čemuž není implementace příliš složitá na výpočet.
 
-- CRC-16 (IBM, Modbus)
-- CRC-32
-
+Mezi rozšířené varianty CRC patří například:
 - DNP
 - CRC-8 Dallas
 - CRC-16 XOR
-Sum:
+- CRC-16 (IBM, Modbus)
+- CRC-32
 - CRC-8 Sum
 - CRC-16 Sum
 - CRC-32 Sum
+
+Varianty Sum se liší jen bitovostí výsledku, ale jejich výpočet stejný jako jsme si uváděli v [[TUL-navazující_studium/1. semestr/KAS-Kyberneticka_bezpecnost_a_sifrovani/Semestrální práce#Jak by ale takový kontrolní součet mohl vypadat?|postupu výpočtu]] triviálního kontolního součtu. 
+### Použití kontrolních součtů:
+Kontrolní součty se používají prakticky vždy když přenášíme nějaká digitální data. Jejich aplikaci můžeme najít například jmenovitě u technologií: **Bzip2**, **Ethernet** (IEEE 802.3), **Gzip**, **MPEG-2**, **PNG**, **SATA**, **Zip**, **Btrfs**, **Ext4**, **iSCSI**, **SCTP**...
+#### IPv4 checksum
+Internet protokol verze 4 také používá kontrolní součet, pro detekci chyby v hlavičce packetu. Používá se modifikovaného 16SUM algoritmu.
+#### ISBN-10
+U ISBN-10 se kontrolní číslice získá tak, aby zbytek po dělení váženého součtu všech číslic jedenácti byl nulový. Kontrolní číslice tedy může mít i hodnotu 10, ta se zapisuje znakem X. Jako váhy se používají čísla (zleva doprava) 10 (pro první cifru kódu skupiny), 9, 8, …, 3, 2, 1 (pro kontrolní číslici). 
+
+Příklad kontroly platnosti ISBN-10
+
+| |Skupina|   |Vydavatel|   |   |Vydání|   |   |   |Kontrola|
+|---|---|---|---|---|---|---|---|---|---|---|
+|ISBN|8|0|2|0|4|0|1|0|5|9|
+|váhy|10|9|8|7|6|5|4|3|2|1|
+|výsledek|80|+ 0|+ 16|+ 0|+ 24|+ 0|+ 4|+ 0|+ 10|+ 9|
+
+Výsledný součet je 143, kontrola: 143 mod 11 = 0 (143 = 13 · 11), ISBN 80-204-0105-9 je platné.
+
+#### Čárové kódy EAN-13
+EAN-13 se skládá z 13 číslic, kdy poslední z nich je kontrolní číslice. Ta je dopočítána pomocí funkce modulo 10. Postup výpočtu (kód 8593026341407):
+1. Sečtu číslice (od konce) na sudých pozicích $(4+4+6+0+9+8)=31$
+2. Přičtu součet číslic na lichých pozicích (od konce) vynásobený třemi $((0+1+3+2+3+5)*3=42)$
+3. Tento součet zaokrouhlím na desítky nahoru $(31+42=73) ⇒ 80$
+4. Kontrolní číslici získám odečtením $80-73 = 7$
+
+Stejným způsobem se kontrolní číslice vypočítavá i pro EAN/UCC8, EAN/UCC14 nebo pro číslo SSCC.
+#### Paměti RAM s ECC
+Zkratka ECC znamená (Error Correction Code), tedy paměti s podporou detekce chyb. Jejich využití je zejména v serverech a pracovních stanicích pro kritické fyzikální simulace. Jedna z implementací využívala kontrolu za pomoci redundantních bitů v paměti RAM, v podobně paritních bitů, které představovaly (sudou nebo lichou) paritu malého množství dat (obvykle jeden bajt) uložený v RAM, a následné porovnání uložené a vypočtené parity za účelem zjištění, zda nedošlo k chybě dat.
 
 ## Hashovací funkce
 Hashovací funkce musí splňovat do určité míry několik vlastností:
@@ -72,7 +102,7 @@ Tato metodika slouží jako kontrolní mechanismus při předávání souborů k
 MD5 je akronym pro Message-Digest algorithm 5. Jedná se o rozšířený šifrovací algoritmus. Ze vstupních dat vzniká výstup označovaný jako tzv. Hash nebo "otisk MD5". Počítače mají dnes dostatečný výkon na to, že MD5 nesplňuje požadavek na to aby, nebyl příliš rychlý na výpočet. 
 - duhové slovníky
 
-## K čemu slouží hashování a kontrolní součty?
+### K čemu slouží hashování?
 
 Slouží zejména k ověření autenticity souborů při internetové komunikaci. Poskytují ochrana jak proti chybě přenosu způsobené nespolehlivým médiem (kontrolní součet), tak i proti úmyslné záměně souborů (otisk hashovací funkce). 
 Mezí další využití hashovacích funkcí patří ukládání hesel (kryptografické hashovací funkce), nebo například asociativní vyhledávání v datech. U vyhledávání klademe trochu jiné nároky na hashovací funkce. Například je výhodou, když data s podobnou vnitřní strukturou získají ve výsledku stejný nebo podobný hash, na čemž je pak postavené samotné vyhledávání či porovnávání souborů.
@@ -80,5 +110,9 @@ Mezí další využití hashovacích funkcí patří ukládání hesel (kryptogr
 - [[Rivest-MD5_rfc1321.pdf]]
 - [[Kontrolní součty a jejich výpočty v C.pdf]]
 - https://it-slovnik.cz
-- [Hashing Algorithms and Security - Computerphile](https://www.youtube.com/watch?v=b4b8ktEV4Bg)
-- [kontrolni soucet checksum - Lukas Hron](https://www.lukashron.cz/kontrolni-soucet-checksum.html)
+- [Computerphile: Hashing Algorithms and Security](https://www.youtube.com/watch?v=b4b8ktEV4Bg)
+- [Lukas Hron - kontrolni soucet checksum](https://www.lukashron.cz/kontrolni-soucet-checksum.html)
+- [googlesource: crc32](https://fuchsia.googlesource.com/third_party/wuffs/+/HEAD/std/crc32/README.md)
+- [EAN13Barcode](https://www.technoriversoft.com/EAN13Barcode.html)
+- [rfc: ISBN](https://datatracker.ietf.org/doc/html/rfc3187)
+- [rfc: Computing the Internet Checksum](https://datatracker.ietf.org/doc/html/rfc1071)

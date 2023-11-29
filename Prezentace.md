@@ -8,6 +8,8 @@ marp: true
 # Semestrální práce:
 ## Kontrolní součty (MD5 a jiné) a jejich použití
 
+Předmět: KAS - Kybernetická bezpečnost a šifrování
+Datum: 29. 11. 2023
 Autor: Jaroslav Körner
 
 ---
@@ -36,8 +38,18 @@ Autor: Jaroslav Körner
 
 ---
 ## Zdroje:
-- [[Rivest-MD5_rfc1321.pdf]]
-- [[Kontrolní součty a jejich výpočty v C.pdf]]
-- [Hashing Algorithms and Security - Computerphile](https://www.youtube.com/watch?v=b4b8ktEV4Bg)
-- [kontrolni soucet checksum - Lukas Hron](https://www.lukashron.cz/kontrolni-soucet-checksum.html)
-- Obrázky: [DALL-E](https://labs.openai.com)
+- [Miroslav Němeček - Kontrolní součty a jejich výpočty v C](http://www.breatharian.eu/sw/crc/index.html)
+- [Lukas Hron - kontrolni soucet checksum](https://www.lukashron.cz/kontrolni-soucet-checksum.html)
+- [Computerphile: Hashing Algorithms and Security](https://www.youtube.com/watch?v=b4b8ktEV4Bg)
+- [googlesource: crc32](https://fuchsia.googlesource.com/third_party/wuffs/+/HEAD/std/crc32/README.md)
+- [EAN13Barcode](https://www.technoriversoft.com/EAN13Barcode.html)
+- [rfc: Rivest-MD5](https://datatracker.ietf.org/doc/html/rfc1321)
+- [rfc: ISBN](https://datatracker.ietf.org/doc/html/rfc3187)
+- [rfc: Computing the Internet Checksum](https://datatracker.ietf.org/doc/html/rfc1071)
+
+---
+## Otázky
+- [DALL-E](https://labs.openai.com)
+
+---
+## Děkuji za pozornost
