@@ -4,6 +4,12 @@ tags:
 theme: gaia
 paginate: true
 marp: true
+style: |
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
 ---
 # Semestrální práce:
 ## Kontrolní součty (MD5 a jiné) a jejich použití
@@ -14,6 +20,9 @@ Autor: Jaroslav Körner
 
 ---
 ## Kontrolní součty
+- **ISBN-10**, **EAN-13**, **Bzip2**, **Zip**, **Gzip**, **PNG**, **MPEG-2**
+- **Btrfs**, **Ext4**,
+- **Ethernet** (IEEE 802.3), **SCTP**, **SATA**,  **iSCSI**
 
 ---
 ## Hash
@@ -25,6 +34,36 @@ Autor: Jaroslav Körner
 2. `04005f28f6f6bed78a8a316df66a07f7`
 
 ![bg right:50% 80%](assets/Queen.png)
+
+---
+## MD5
+<div class="columns">
+<div>
+
+1. Inicializace akumulátorů.
+2. Funkcemi využívajících operace `XOR`.
+3. Netriviální proházení bitů.
+4. Hodnoty se přičtou do akumulátorů.
+5. Zpět na krok 2. dokud se vše nezpracuje.
+6. Akumulatory se zřetězí na výstup (128b otisk).
+</div>
+<div>
+	<br>
+	<code>
+		word A: 01 23 45 67 <br>
+		word B: 89 ab cd ef <br>
+		word C: fe dc ba 98 <br>
+		word D: 76 54 32 10 <br>
+	</code>
+	<br><br><br>
+	<code>
+		F(X,Y,Z) = XY v not(X) Z 
+		G(X,Y,Z) = XZ v Y not(Z) 
+		H(X,Y,Z) = X xor Y xor Z 
+		I(X,Y,Z) = Y xor (X v not(Z))
+	</code>
+	</div>
+</div>
 
 ---
 ## Použití:

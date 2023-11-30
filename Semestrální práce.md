@@ -99,8 +99,35 @@ Postup práce s těmito otisky pak spočívá v porovnání kontrolního součtu
 
 Tato metodika slouží jako kontrolní mechanismus při předávání souborů k ověření zda nedošlo k poškození předávaných dat, zda nedošlo k infiltrování dat škodlivým kódem a nebo zda nedošlo k jakémukoliv zásahu do dat během procesu předávání třetí stranou.
 ### MD5 blíže
-MD5 je akronym pro Message-Digest algorithm 5. Jedná se o rozšířený šifrovací algoritmus. Ze vstupních dat vzniká výstup označovaný jako tzv. Hash nebo "otisk MD5". Počítače mají dnes dostatečný výkon na to, že MD5 nesplňuje požadavek na to aby, nebyl příliš rychlý na výpočet. 
-- duhové slovníky
+MD5 je akronym pro Message-Digest algorithm 5. Jedná se o rozšířený šifrovací algoritmus. Ze vstupních dat vzniká výstup označovaný jako tzv. Hash nebo "otisk MD5". Při výpočtu se používá nasčítání hodnot do (4x32b) vnitřcích akumulátorů které jsou nastavené na předem definované hodnoty. 
+
+Nastínění postupu algoritmu MD5:
+1. Inicializace akumulátorů.
+``` C
+word A: 01 23 45 67 
+word B: 89 ab cd ef 
+word C: fe dc ba 98 
+word D: 76 54 32 10
+```
+2. Vstupní data prohání funkcemi využívajících operace `XOR`.
+``` C
+F(X,Y,Z) = XY v not(X) Z 
+G(X,Y,Z) = XZ v Y not(Z) 
+H(X,Y,Z) = X xor Y xor Z 
+I(X,Y,Z) = Y xor (X v not(Z))
+```
+3. Pak se provede netriviální proházení bitů přes převodní tabulku.
+4. Hodnoty se přičtou do akumulátorů:
+``` C
+A = A + AA 
+B = B + BB 
+C = C + CC 
+D = D + DD
+```
+5. Pokračuje se na kroku 2. dokud se nezpracuje celá zpráva.
+6. Obsah akumulátorů se na výstupu zřetězí do výsledného 128b otisku.
+
+Počítače mají dnes již dostatečný výkon na to, aby MD5 nesplňoval požadavek na "pomalý" výpočet, za účelem odolnosti vůči útokům typu hrubé síly (brute-force). 
 
 ### K čemu slouží hashování?
 
