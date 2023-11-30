@@ -20,9 +20,19 @@ Autor: Jaroslav Körner
 
 ---
 ## Kontrolní součty
-- **ISBN-10**, **EAN-13**, **Bzip2**, **Zip**, **Gzip**, **PNG**, **MPEG-2**
+### 32-Sum
+1) Rozdělí zprávu na $n * 32b$.
+2) Inicializujeme akumulátor na "$0$".
+3) Aplikuje se "$sum()$" a "$mod(32)$".
+4) Opakujeme krok 2 dokud nezpracujeme celou zprávu.
+5) Určíme **dvojkový doplněk** (inverzní prvek pro sčítání).
+6) Příjemce po přičtení všech přijatých slov získá $0$.
+---
+## Aplikace kontrolních součtů
 - **Btrfs**, **Ext4**,
 - **Ethernet** (IEEE 802.3), **SCTP**, **SATA**,  **iSCSI**
+- **ISBN-10**, **EAN-13**, **Bzip2**, **Zip**, **Gzip**, **PNG**, **MPEG-2**
+![bg right 90%](assets/IPv4-header_banner-555x202.png)
 
 ---
 ## Hash
@@ -57,10 +67,10 @@ Autor: Jaroslav Körner
 	</code>
 	<br><br><br>
 	<code>
-		F(X,Y,Z) = XY v not(X) Z 
-		G(X,Y,Z) = XZ v Y not(Z) 
-		H(X,Y,Z) = X xor Y xor Z 
-		I(X,Y,Z) = Y xor (X v not(Z))
+		F(X,Y,Z) = XY v not(X) Z <br>
+		G(X,Y,Z) = XZ v Y not(Z) <br>
+		H(X,Y,Z) = X xor Y xor Z <br>
+		I(X,Y,Z) = Y xor (X v not(Z)) <br>
 	</code>
 	</div>
 </div>
@@ -89,6 +99,7 @@ Autor: Jaroslav Körner
 ---
 ## Otázky
 - [DALL-E](https://labs.openai.com)
+- [IPv4](https://blog.apnic.net/2018/06/18/a-closer-look-at-ip-headers/)
 
 ---
 ## Děkuji za pozornost
