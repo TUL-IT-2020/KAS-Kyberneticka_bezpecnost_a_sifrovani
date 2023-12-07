@@ -37,8 +37,8 @@ Autor: Jaroslav Körner
 ---
 ## Hash
 - Královnina zpráva:
-1. "Jsem těhotná, asi s kočím z Mostu. Královna"
-2. "Jsem těhotná asi skočím z mostu. Královna"
+1. "Jsem těhotná asi s kočím z Mostu. Královna"
+2. "Jsem těhotná, asi skočím z mostu. Královna"
 - MD5 otisky:
 1. `3c723007c372b83ea3e28161f174dbdf`
 2. `04005f28f6f6bed78a8a316df66a07f7`
