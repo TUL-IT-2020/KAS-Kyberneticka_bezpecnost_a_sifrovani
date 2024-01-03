@@ -72,7 +72,7 @@ $1,4*2$
 $1,2,3,2*4$
 $3*2,2*3$
 
-## Problémy komprese H.K
+## Problémy komprese H.K.
 - Nutnost přenášet kódovací tabulku.
 - Pracuje na znacích, ne dvojicích, slovech
 - statistický model pravděpodobnosti výskytu znaků

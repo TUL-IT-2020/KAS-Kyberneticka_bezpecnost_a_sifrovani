@@ -1,4 +1,6 @@
 # Instantní kódy
+Instantní kódy (okamžité), lze je dekódovat jak postupně kódy přichází.
+
 ``` mermaid
 stateDiagram-v2
     state Kódy {
@@ -138,7 +140,7 @@ Měřítko jestli kód je dobrý nebo špatný pouze tehdy, když mají všechny
 ### Průměrná délka kódu
 $L_{AV} = \frac{1}{n} \sum^n_{i=1} l_i p_i$
 - $p_i$ - pravděpodobnost výskytu i-tého znaku
-Efektivní kód: znaky s vysokou pravděpodobností krátká kódová slova.
+Efektivní kód: znaky s vysokou pravděpodobností jsou krátká kódová slova.
 
 ### Kraftova nerovnost (pro binární kódy)
 $\sum^n_{i=1} 2^{-l_i} \leq 1$
@@ -148,8 +150,8 @@ Jednoznakové kódové slovo sebere polovinu stromu, vyplatí se nám použít u
 
 ## Optimální instantní kód
 - $n$ - znaků
-$p_1, p_2, ..., p_n$
-- $p_i$ ... pravděpodobnost výskytu
+- $p_1, p_2, ..., p_n$
+	- $p_i$ ... pravděpodobnost výskytu
 
 Nutná podmínka:
 $p_1 \geq p_2 \geq p_3 \; ... \geq p_n$

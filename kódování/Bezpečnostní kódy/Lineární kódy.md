@@ -135,3 +135,6 @@ $$
 
 ## Hammingovská vzdálenost
 ![[Hammingovská vzdálenost]]
+
+## Lineární kódy se schopností opravy chyb
+![[Lineární kódy se schopností opravy chyb]]

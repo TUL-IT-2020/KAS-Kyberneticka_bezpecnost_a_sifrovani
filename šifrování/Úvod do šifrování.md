@@ -80,3 +80,8 @@ proudové vs blokové
 ![[Asymetrické systémy]]
 ## Hybridní kryptosystém
 ![[Hybridní kryptosystém]]
+
+## Elektronický podpis
+![[Elektronický podpis]]
+## Kvantová kryptologie
+![[Kvantová kryptologie]]

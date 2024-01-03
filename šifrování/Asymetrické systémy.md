@@ -6,9 +6,9 @@ $p_1, p_2$ jsou prvočísla
 $p_1 * p_2 = k$ - snadné, $O(n^{1,6})$
 
 Určit však z $k$ čísla $p_1$ a $p_2$ je obtížné $O(e^n)$.
-
+![[AES_1.jpg]]
 Prakticky: dvojice klíčů
-
+![[AES_2.jpg]]
 Alice a Bob se snaží komunikovat.
 Každý z nich má dvojic klíčů soukromý a veřejný. Tyto klíče jsou matematicky provázané, ale ze znalosti jednoho (veřejného) je těžké určit ten druhý (soukromý). (odvození veřejného klíče bývá jednoduché)
 

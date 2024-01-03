@@ -23,11 +23,11 @@ Rekurzivní konstrukce GK délky n z GK délky n-1
 | 01     | 001 |
 | 11     | 011 |
 | 10     | 010 |
-| --     | --  |
+| ...       | ...    |
 | 10     | 110 |
 | 11     | 111 |
 | 01     | 101 |
-| 00     | 100 | 
+| 00     | 100 |
 
 Přímá konstrukce
 Vezmeme "normální binnární reperzentaci"

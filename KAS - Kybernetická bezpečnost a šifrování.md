@@ -5,7 +5,10 @@ Otto Severýn
 CO2OO7 - Budova C druhé patro
 
 ## Semestrální práce
-[[TUL-navazující_studium/1. semestr/KAS-Kyberneticka_bezpecnost_a_sifrovani/Semestrální práce|Semestrální práce]]
+- [[TUL-navazující_studium/1. semestr/KAS-Kyberneticka_bezpecnost_a_sifrovani/Semestrální práce|Semestrální práce]]
+	- [[KAS-Checksum_Semestrální_práce.pdf]]
+- [[Prezentace]]
+	- [[KAS-Checksum_prezentace.pdf]]
 
 Do 4.12. rozpis prezentujících. 
 Obhajoby 5. a 12.12. v čase cvičení E114. 10 minut na člověka 5 minut na prezentaci. 
@@ -14,6 +17,30 @@ Obhajoby 5. a 12.12. v čase cvičení E114. 10 minut na člověka 5 minut na pr
 Téma ve 4. týdnu.
 Vypracování a prezentace semestrální práce. Prezentace koncem semestru, 11-12 týden. 10 minut na prezentaci.
 
+## Zkouška
+Otázky:  
+1,2 - kódování  
+3,4 - šifrování  
+
+Ústní část:  
+Doplňující otázka + otázka na semestrální práci
+
+Písemná část: 
+1) Huffman 
+	   a) vyřešit příklad 
+	   b) je u toho příkladu jednoznačná délka slov? 
+	   c) průměrná délka 
+2) systemické systémy 
+	   a) co to je 
+	   b) výhody a nevýhody 
+	   c) použití 
+	   d) příklady 
+ 3) certifikáty 
+    a) co to je 
+    b) k čemu to je 
+    c) kdo je vydává 
+
+Stačilo to napsat poměrně vágně, samozřejmě krom příkladů.
 ## Přednášky
 účast nepovinná
 
@@ -48,43 +75,12 @@ Postup přípravy na odeslání zprávy
 2) Zašifrovat
 3) Zabezpečit
 
-### Kódování 
-Výklad významu jedniček a nul.
-#### Kódování jednoho znaku:
-Zobrazení $K : A \to B^*$
-- $A$ - zdrojová abeceda, př: $A = \{a,b,...,z\}$ 
-- $B$ - kódová abeceda, př: $B = \{0,1\}$
-- $^*$ - iterace množiny, př: $B^* = \{ \varnothing,0,1,00,01,10,11,...\}$
-Kódová slova: Prvky z $B^*$, kterým je přiřazeno nějaké $a \in A$.
-$b = K(a)$
-
-#### Kódování zprávy:
-Zpráva: $M = a_1, a_2, a_3, ..., a_n \; a \in A$
-Zakódovaná zpráva: $K(M) = K(a_1), K(a_2), K(a_3), ..., K(a_n)$
-
-Příklad:
-$A = \{a,b,c\}$
-$B = \{0,1\}$
-
-|     | $K_1$ | $K_2$ | $K_3$ | $K_4$ | $K_5$ |
-| --- | ----- | ----- | ----- | ----- | ----- |
-| a   | 0     | 0     | 00    | 01    | 0     |
-| b   | 0     | 1     | 01    | 001   | 10    |
-| c   | 1     | 01    | 10    | 0001  | 110   |
-| d   | 11    | 11    | 11    | 00001 | 111   |
-
-- $K_1$ - Singulární kód - není prostý
-- $K_2$ - není jednoznačně dekódovatelný
-- $K_3$ - blokový, stejně dlouhá bloková slova
-- $K_4$ - různě dlouhá bloková slova, (jedničky slouží jako oddělovače)
-
-$K_3,K_4,K_5$ - jsou instantní kódy (okamžité), lze je dekódovat jak postupně kódy přichází.
-
-#### Instantní kódy
-![[Instantní kódy]]
-#### Bezztrátová komprese dat
-![[Bezztrátová komprese dat]]
+### Kódování
+[[Kódování]]
 ### Šifrování
-![[Úvod do šifrování]]
+[[Úvod do šifrování]]
+
+[[Poznámky k bezpečnosti]]
 ## Cvičení
 
+![[Příklady]]
