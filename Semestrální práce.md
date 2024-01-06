@@ -8,7 +8,7 @@ Kontrolní součet pochází z anglického: **checksum = check + sum**, tedy spo
 > **Checksum** (Kontrolní součet) - číslo, které slouží k kontrole integrity dat. Je vypočteno nějakým speciálním algoritmem. Kontrolní součet je přenášen společně s nějakou informací. Pokud vypočtený kontrolní součet nesouhlasí s tím přeneseným, nastala pravděpodobně při přenosu chyba.  
 > - [IT slovník](https://it-slovnik.cz)
 ### Jak by ale takový kontrolní součet mohl vypadat? 
-Pro představu můžeme uvažovat velmi jednoduchý algoritmus, který bude na data aplikovat funkci $sum() \; mod(32)$ nad 32bitovými slovy. Když chceme odeslat zprávu po nespolehlivém kanálu, tak je potřeba ověřit na straně příjemce zda obdržel správná data. Odesilatel pak může postupovat následovně:
+Pro představu můžeme uvažovat velmi jednoduchý algoritmus, který bude na data aplikovat funkci $sum() \; mod(32)$ nad 32bitovými slovy. Když chceme odeslat zprávu po nespolehlivém kanálu, tak je potřeba ověřit na straně příjemce, zda obdržel správná data. Odesilatel pak může postupovat následovně:
 1) Rozdělí zprávu na $n * 32b$ úseků (poslední doplní nulami na příslušnou délku).
 2) Začne tyto bloky postupně číst a odesílat kanálem. Zároveň je však bude sčítat "$sum()$" s akumulátorem (ten zde inicializujeme na hodnotu $0$), pokud něco přeteče přes $32bitovou$ přesnost, tak se tyto bity jednoduše zahodí "$mod(32)$".
 3) Když odesilatel odešle poslední slovo zprávy, tak přichází na řadu náš akumulátor. U něj se nejdříve určí jeho **dvojkový doplněk** (inverzní prvek pro sčítání), tím se docílí že příjemce po přičtení všech přijatých slov získá $0$.
