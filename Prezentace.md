@@ -14,6 +14,8 @@ style: |
 # Semestrální práce:
 ## Kontrolní součty (MD5 a jiné) a jejich použití
 
+<br><br><br><br>
+
 Předmět: KAS - Kybernetická bezpečnost a šifrování
 Datum: 29. 11. 2023
 Autor: Jaroslav Körner

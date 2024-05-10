@@ -83,4 +83,4 @@ Postup přípravy na odeslání zprávy
 [[Poznámky k bezpečnosti]]
 ## Cvičení
 
-![[Příklady]]
+![[TUL-navazující_studium/1. semestr/KAS-Kyberneticka_bezpecnost_a_sifrovani/Příklady]]
